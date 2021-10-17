@@ -1,21 +1,20 @@
-let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-
-const n =  Number(input[0]);
-const result = [];
-
-for (let i = 0; i < n; i++) {
-    let cnt = 0;
-    
-    for (let s of input[i+1]) {
-        if(s==="("){
-            cnt++;
-        } else {
-            cnt--;
-        }
-        if (cnt < 0) break;
+function isVPS(str) {
+  let stack = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "(") stack.push(str[i]);
+    else {
+      if (stack.length === 0) {
+        return "NO";
+      }
+      stack.pop();
     }
-    
-    result.push(cnt === 0 ? 'YES' : "NO");
-}
+  }
 
-console.log(result.join('\n'));
+  if (stack.length !== 0) return "NO";
+  else return "YES";
+}
+let input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
+let n = Number(input[0]);
+for (let i = 0; i < n; i++) {
+  console.log(isVPS(input[i + 1]));
+}
