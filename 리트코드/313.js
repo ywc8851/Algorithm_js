@@ -12,8 +12,7 @@ var nthSuperUglyNumber = function(n, primes) {
     let p = 0;
     for (let j = 0; j < len; j++) {
       if (ans[i] > primes[j] * ans[prime_count[j]]) {
-        p = j;
-        ans[i] = primes[p] * ans[prime_count[p]]; // 최솟값 구하여 대입
+        ans[i] = primes[j] * ans[prime_count[j]]; // 최솟값 구하여 대입
       }
     }
     for (let k = 0; k < len; k++) {
