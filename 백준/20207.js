@@ -3,7 +3,7 @@ const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
 const input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 const scheduleNums = +input[0];
-let hasSchedules = new hasSchedulesay(366).fill(0);
+let hasSchedules = new Array(366).fill(0);
 let max_day = 0;
 let min_day = +input[1].split(" ")[0];
 
