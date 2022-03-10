@@ -18,7 +18,7 @@ const getMinDistance = () => {
   let sum = 0;
   house.forEach(([hx, hy]) => {
     let min = Infinity;
-    chicken.forEach((index) => {
+    chicken.forEach((_, index) => {
       if (check[index] === true) {
         const [cx, cy] = chicken[index];
         min = Math.min(min, Math.abs(hx - cx) + Math.abs(hy - cy));
