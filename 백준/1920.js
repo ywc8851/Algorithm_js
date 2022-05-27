@@ -1,6 +1,6 @@
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
-let input = fs.readFileSync(filePath).toString().trim().split("\n");
+const input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 let n = Number(input[0]);
 let nums = input[1].split(" ").map(Number);
@@ -25,5 +25,5 @@ for (let i = 0; i < m; i++) {
       left = mid + 1;
     }
   }
-  console.log(ans[i]);
 }
+console.log(ans.join("\n"));
