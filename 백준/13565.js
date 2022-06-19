@@ -7,6 +7,7 @@ const arr = input.map(i => i.trim().split("").map(Number));
 const visited = Array.from({ length: row }, () =>
   Array.from({ length: col }, () => false)
 );
+
 const dx = [0, 0, 1, -1];
 const dy = [1, -1, 0, 0];
 
@@ -39,12 +40,12 @@ for (let i = 0; i < col; i++) {
   if (!visited[0][i]) bfs(0, i);
 }
 
-let ans = 0;
+let ans = "NO";
 for (let i = 0; i < col; i++) {
   if (visited[row - 1][i]) {
-    ans = 1;
+    ans = "YES";
     break;
   }
 }
 
-ans === 1 ? console.log("YES") : console.log("NO");
+console.log(ans);
